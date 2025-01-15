@@ -11,6 +11,7 @@ import productRoutes from './routes/product.route.js';
 import notifyRoute from './routes/notification.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import cors from 'cors';  // Import CORS middleware
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ const __dirname = path.resolve();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
